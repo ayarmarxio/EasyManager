@@ -7,7 +7,116 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
 
-    </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+
+
+        <Grid.Background>
+            <ImageBrush
+                ImageSource="../Assets/solid-color-wallpaper-21962-22515-hd-wallpapers.jpg"></ImageBrush>
+        </Grid.Background>
+
+
+
+
+
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock  Text="Create your own event" FontSize="100" Foreground="White" FontFamily="Forte" />
+        </StackPanel>
+
+
+
+<Grid Column="1" Row="1">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+    
+    <Grid Grid.Row="0" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Text="Name: " Foreground="White" FontSize="30"></TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+<TextBox Width="500" Height="50"></TextBox>
+        </StackPanel>
+            </Grid>
+    <Grid Grid.Row="1" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+<TextBlock Text="Description: " Foreground="White" FontSize="30"></TextBlock>
+        </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                    <TextBox Width="500" Height="50"></TextBox>
+                </StackPanel>
+            </Grid>
+    <Grid Grid.Row="2" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Text="Place: " Foreground="White" FontSize="30"></TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                    <TextBox Width="500" Height="50"></TextBox>
+                </StackPanel>
+            </Grid>
+    <Grid Grid.Row="3" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Text="Time: " Foreground="White" FontSize="30"></TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                    <TextBox Width="500" Height="50"></TextBox>
+                </StackPanel>
+            </Grid>
+    <Grid Grid.Row="4" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Text="Date: " Foreground="White" FontSize="30"></TextBlock>
+                </StackPanel>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+            <TextBox Width="500" Height="50"></TextBox>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="5" >
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Height="80" Width="450" Content="Create Event"  Foreground="White" FontSize="30" ></Button>
+                </StackPanel>
+                
+            </Grid>
+
+        </Grid>
+        
+
+        </Grid>
 </Page>
