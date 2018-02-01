@@ -8,5 +8,6 @@ namespace EasyManager.ViewModel
 {
     class EventViewModel
     {
+
     }
 }
