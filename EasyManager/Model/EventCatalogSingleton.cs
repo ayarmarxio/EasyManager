@@ -9,6 +9,6 @@ namespace EasyManager.Model
 {
     class EventCatalogSingleton
     {
-       // Comment for pushing
+       
     }
 }
