@@ -8,7 +8,6 @@ using System.Windows.Input;
 namespace EasyManager.ViewModel
 {
     public class RelayCommand
-
     {
 
     }
