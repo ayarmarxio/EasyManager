@@ -8,6 +8,9 @@ namespace EasyManager.ViewModel
 {
     public class EventHandler
     {
+        public void CreateEvent()
+        {
 
+        }
     }
 }

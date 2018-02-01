@@ -8,5 +8,6 @@ namespace EasyManager.Model
 {
     class EventCatalogSingleton
     {
+
     }
 }
