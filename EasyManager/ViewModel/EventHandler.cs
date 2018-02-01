@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace EasyManager.ViewModel
 {
-    class EventHandler
+    public class EventHandler
     {
+
     }
 }

@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\EventCatalogSingleton.cs" />
+    <Compile Include="Model\NotifyChanged.cs" />
     <Compile Include="ViewModel\DateTimeConverter.cs" />
     <Compile Include="ViewModel\EventHandler.cs" />
     <Compile Include="ViewModel\EventViewModel.cs" />
