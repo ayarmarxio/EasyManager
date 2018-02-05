@@ -40,13 +40,6 @@ namespace EasyManager.Model
             {
                  eventCollection.Add(addedEvent);
             }
-
-
-            
-
-            
-            
-            
-
+        
     }
 }

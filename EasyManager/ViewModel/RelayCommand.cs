@@ -7,9 +7,19 @@ using System.Windows.Input;
 
 namespace EasyManager.ViewModel
 {
-    public class RelayCommand
+    public class RelayCommand: ICommand
     {
+        public bool CanExecute(object parameter)
+        {
+            throw new NotImplementedException();
+        }
 
+        public void Execute(object parameter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public event System.EventHandler CanExecuteChanged;
     }
 
 }

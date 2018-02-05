@@ -5,6 +5,7 @@
     xmlns:local="using:EasyManager.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:EasyManager.ViewModel"
     mc:Ignorable="d">
 
     <Grid>
@@ -21,14 +22,14 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-
-
         <Grid.Background>
             <ImageBrush
                 ImageSource="../Assets/solid-color-wallpaper-21962-22515-hd-wallpapers.jpg"></ImageBrush>
         </Grid.Background>
 
-
+        <Grid.DataContext>
+            <ViewModel:EventViewModel/>
+        </Grid.DataContext>
 
 
 
@@ -57,7 +58,7 @@
                     <TextBlock Text="Name: " Foreground="White" FontSize="30"></TextBlock>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-<TextBox Width="500" Height="50"></TextBox>
+<TextBox Name="CreateNameTextBox" Width="500" Height="50"></TextBox>
         </StackPanel>
             </Grid>
     <Grid Grid.Row="1" >
