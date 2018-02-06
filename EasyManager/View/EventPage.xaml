@@ -21,14 +21,14 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         
-        
-        
         <Grid.Background>
             <ImageBrush
                 ImageSource="../Assets/solid-color-wallpaper-21962-22515-hd-wallpapers.jpg"></ImageBrush>
-            </Grid.Background>
+        </Grid.Background>
         
         
+        
+         
         
         <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock  Text="Christian Madhan Witt" FontSize="100" Foreground="White" FontFamily="Forte" />
@@ -36,10 +36,18 @@
         
         
         <ListView x:Name="EventsListView" Grid.Column="1" Grid.Row="1"
-                  ItemsSource="{Binding }">
+                  ItemsSource="{Binding EventsCollection}">
             <ListView.DataContext>
                 <local:EventViewModel/>
             </ListView.DataContext>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="blockName" Text="{Binding Name, Mode=TwoWay }" FontSize="40" Foreground="Black"></TextBlock>
+                        <TextBlock x:Name="blockPlace" Text="{Binding Place, Mode=TwoWay }" FontSize="40" Foreground="Black"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         
         

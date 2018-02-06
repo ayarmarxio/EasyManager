@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace EasyManager.Model
 {
-    class EventCatalogSingleton
+    public class EventCatalogSingleton
     {
-       
             private static EventCatalogSingleton instance;
 
             private ObservableCollection<Event> eventCollection;
@@ -21,6 +20,7 @@ namespace EasyManager.Model
                     new Event("Salsa", "Rostorv", "Very very funny activity", new DateTime (2017, 01, 11), new DateTime (2017, 01, 14)),
                     new Event("Fitness", "Copenhagen", "Not that funny activity", new DateTime (2017, 01, 11), new DateTime (2017, 01, 14)),
                     new Event("Ballet", "Holbæk", "Very dangerous activity", new DateTime (2017, 01, 11), new DateTime (2017, 01, 14)),
+                    new Event("Hockey", "Lejre", "Lovely and passionate activity", new DateTime (2017, 01, 11), new DateTime (2017, 01, 14)),
                 };
             }
 
@@ -36,10 +36,18 @@ namespace EasyManager.Model
                     }
             }
 
+            // If you need to retrieve the Event Catalog Singleton as a Observable Collecion
+
+            public ObservableCollection<Event> GetEventCatalogSingleton()
+                {
+                    return eventCollection;
+                } 
+            
+            //   Add an event to the collection.
+
             public void DoAddEvent(Event addedEvent)
             {
                  eventCollection.Add(addedEvent);
             }
-        
     }
 }

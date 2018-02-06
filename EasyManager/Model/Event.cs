@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyManager.Model
 {
-    class Event
+    public class Event
     {
         private string _name;
         private string _place;
@@ -22,11 +22,11 @@ namespace EasyManager.Model
 
         public Event ( string name, string place, string description, DateTime time, DateTime date)
         {
-            name = _name;
-            place = _place;
-            description = _description;
-            time = _time;
-            date = _date;
+            _name = name;
+           _place = place;
+           _description = description;
+            _time = time;
+            _date = date;
         }
 
     }
