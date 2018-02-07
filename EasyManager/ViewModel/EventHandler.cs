@@ -7,18 +7,27 @@ using EasyManager.Model;
 
 namespace EasyManager.ViewModel
 {
-    public class EventHandler
+    class EventHandler
     {
-        public EventCatalogSingleton EventCatalogSingleton { get; set; }
 
-        public EventHandler()
+        private EventViewModel _eventViewModelParameter;
+        
+
+        public EventHandler( EventViewModel EventViewModelParameter)
         {
-            
+            _eventViewModelParameter = EventViewModelParameter;
         }
 
-        public void CreateEvent(Event AddedEvent)
+        public void CreateEvent()
         {
-            EventCatalogSingleton.DoAddEvent(AddedEvent);
+           
+            Event CreatedEvent = new Event(
+                _eventViewModelParameter.Name, 
+                _eventViewModelParameter.Place,
+                _eventViewModelParameter.Description, 
+                _eventViewModelParameter.Time, 
+                _eventViewModelParameter.Date
+                );
         }
     }
 }

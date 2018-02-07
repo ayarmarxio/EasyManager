@@ -95,14 +95,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\NotifyPropertyChanged.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\EventCatalogSingleton.cs" />
     <Compile Include="Model\NotifyChanged.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\DateTimeConverter.cs" />
     <Compile Include="ViewModel\EventHandler.cs" />
     <Compile Include="ViewModel\EventViewModel.cs" />
     <Compile Include="ViewModel\Framenavigate.cs" />
-    <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="View\CreateEventPage.xaml.cs">
       <DependentUpon>CreateEventPage.xaml</DependentUpon>
     </Compile>
