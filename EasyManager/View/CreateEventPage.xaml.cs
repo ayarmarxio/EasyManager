@@ -26,5 +26,10 @@ namespace EasyManager.View
         {
             this.InitializeComponent();
         }
+
+        private void BackToEventPageButtonk(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
     }
 }

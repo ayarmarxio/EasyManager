@@ -24,6 +24,8 @@ namespace EasyManager.Model
                 };
             }
 
+
+
             public static EventCatalogSingleton Instance
                 {
                     get

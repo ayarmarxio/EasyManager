@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.Devices.AllJoyn;
 using Windows.UI.Xaml;
 using EasyManager.Model;
 using EasyManager.Common;
@@ -17,50 +19,43 @@ namespace EasyManager.ViewModel
 
         private EventCatalogSingleton _eventCatalogSingleton;
 
-        // public ICommand _createEventCommand;
+        
 
+       
 
         // ------------------Properties--------------------
 
 
-        // Instanciate a Event Catalog Singleton
+        // Instanciate a Event Catalog Singleton.
+
         public EventCatalogSingleton EventCatalogSingleton { get; set; }
 
         public ObservableCollection<Event> EventsCollection { get; set; }
 
         public EventHandler eventHandler { get; set; }
         
-        //public RelayCommand CreateEventCommand
-        //{
-        //    get
-        //    {
-        //        if (_createEventCommand == null)
-        //            _createEventCommand = new RelayCommand(eventHandler.CreateEvent);
-        //    }
-        //    set { _createEventCommand = value; }
-        //}
-
         public RelayCommand CreateEventCommand { get; set; }
 
 
         // Properties for Event
 
-        public string Name { get; set; }
-        public string Place { get; set; }
-        public string Description { get; set; }
-
-        public DateTime Date { get; set; }
-
-        public DateTime Time { get; set; }
+        public string Name { get; set;}
+        public string Place { get; set;}
+        public string Description { get; set;}
+        public DateTime Date { get; set;}
+        public DateTime Time { get; set;}
 
 
         // ------------------Constructor---------------------
+
         public EventViewModel()
         {
             _eventCatalogSingleton = EventCatalogSingleton.Instance;
             EventsCollection = _eventCatalogSingleton.GetEventCatalogSingleton();
             eventHandler = new EventHandler(this);
             CreateEventCommand = new RelayCommand(eventHandler.CreateEvent);
+            
         }   
+
     }
 }

@@ -4,36 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.VoiceCommands;
+using Windows.UI.Xaml;
 using EasyManager.Model;
 
 namespace EasyManager.ViewModel
 {
     class EventHandler
     {
+        private EventViewModel _eventViewModel;
+        private EventCatalogSingleton _eventCatalog;
 
-        private EventViewModel _eventViewModelParameter;
+        public Event CreatedEvent { get; set; }
+        public EventCatalogSingleton EventCatalog { get; set; }
         
-
-        public EventHandler( EventViewModel EventViewModelParameter)
+        public EventHandler( EventViewModel EventViewModel)
         {
-            _eventViewModelParameter = EventViewModelParameter;
+            _eventViewModel = EventViewModel;
         }
 
         public void CreateEvent()
         {
-           
-            Event CreatedEvent = new Event(
-                _eventViewModelParameter.Name, 
-                _eventViewModelParameter.Place,
-                _eventViewModelParameter.Description, 
-                _eventViewModelParameter.Time, 
-                _eventViewModelParameter.Date
+             Event createdEvent = new Event (
+                _eventViewModel.Name, 
+                _eventViewModel.Place,
+                _eventViewModel.Description, 
+                _eventViewModel.Time, 
+                _eventViewModel.Date
                 );
-        }
 
-        public void SetEvent()
-        {
-             
+
+            // EventCatalog.DoAddEvent(createdEvent);
+
+
+            _eventViewModel.EventCatalogSingleton.DoAddEvent(CreatedEvent);
+
+            
         }
     }
 }

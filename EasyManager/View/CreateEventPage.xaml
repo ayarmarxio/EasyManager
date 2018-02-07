@@ -16,9 +16,9 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="7*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="858*"/>
+            <RowDefinition Height="67*"/>
         </Grid.RowDefinitions>
 
         <Grid.Background>
@@ -32,92 +32,95 @@
 
 
 
-        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="136" Margin="0,17,0,780" Grid.RowSpan="2" Width="900">
             <TextBlock  Text="Create your own event" FontSize="100" Foreground="White" FontFamily="Forte" />
         </StackPanel>
 
 
 
-<Grid Column="1" Row="1">
-    <Grid.RowDefinitions>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="*"/>
+        <Grid Column="1" Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-    
-    <Grid Grid.Row="0" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
                     <TextBlock Text="Name: " Foreground="White" FontSize="30"></TextBlock>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-<TextBox Name="CreateNameTextBox" Width="500" Height="50" Text="{Binding Name}"></TextBox>
-        </StackPanel>
-            </Grid>
-    <Grid Grid.Row="1" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
-<TextBlock Text="Description: " Foreground="White" FontSize="30"></TextBlock>
-        </StackPanel>
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-                    <TextBox Width="500" Height="50" Text="{Binding Description}"></TextBox>
+                    <TextBox Name="CreateNameTextBox" Width="500" Height="50" Text="{Binding Name, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </Grid>
-    <Grid Grid.Row="2" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            <Grid Grid.Row="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Text="Description: " Foreground="White" FontSize="30"></TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                    <TextBox Width="500" Height="50" Text="{Binding Description, Mode=TwoWay}"></TextBox>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
                     <TextBlock Text="Place: " Foreground="White" FontSize="30"></TextBlock>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-                    <TextBox Width="500" Height="50" Text="{Binding Place}"></TextBox>
+                    <TextBox Width="500" Height="50" Text="{Binding Place, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </Grid>
-    <Grid Grid.Row="3" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            <Grid Grid.Row="3" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
                     <TextBlock Text="Time: " Foreground="White" FontSize="30"></TextBlock>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-                    <TextBox Width="500" Height="50" Text="{Binding Time}"></TextBox>
+                    <TextBox Width="500" Height="50" Text="{Binding Time, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </Grid>
-    <Grid Grid.Row="4" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            <Grid Grid.Row="4" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
                     <TextBlock Text="Date: " Foreground="White" FontSize="30"></TextBlock>
                 </StackPanel>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-                    <TextBox Width="500" Height="50" Text="{Binding Date}"></TextBox>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                    <TextBox Width="500" Height="50" Text="{Binding Date, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="5" >
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button Height="80" Width="450" Content="Create Event"  Foreground="White" FontSize="30" 
                             Command="{Binding CreateEventCommand}" ></Button>
+                    <Button Height="80" Width="450" Content="BackToEventPage" Foreground="White" FontSize="30" 
+                             Click="BackToEventPageButtonk"></Button>
+
                 </StackPanel>
-                
+
             </Grid>
 
         </Grid>
-        
 
-        </Grid>
+
+    </Grid>
 </Page>
