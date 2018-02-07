@@ -29,5 +29,11 @@ namespace EasyManager.Model
             _date = date;
         }
 
+        public Event()
+        {
+            
+        }
+
+
     }
 }

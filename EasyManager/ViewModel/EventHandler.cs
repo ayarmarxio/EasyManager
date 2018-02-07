@@ -5,14 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 using EasyManager.Model;
 
-
 namespace EasyManager.ViewModel
 {
-     public  class EventHandler
-     {
+    class EventHandler
+    {
 
+        private EventViewModel _eventViewModelParameter;
         
-     }
+
+        public EventHandler( EventViewModel EventViewModelParameter)
+        {
+            _eventViewModelParameter = EventViewModelParameter;
+        }
+
+        public void CreateEvent()
+        {
+           
+            Event CreatedEvent = new Event(
+                _eventViewModelParameter.Name, 
+                _eventViewModelParameter.Place,
+                _eventViewModelParameter.Description, 
+                _eventViewModelParameter.Time, 
+                _eventViewModelParameter.Date
+                );
+        }
+    }
 }
+
+
+
 
 
