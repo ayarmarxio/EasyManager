@@ -10,10 +10,8 @@ namespace EasyManager.ViewModel
 {
     class EventHandler
     {
-
         private EventViewModel _eventViewModelParameter;
         
-
         public EventHandler( EventViewModel EventViewModelParameter)
         {
             _eventViewModelParameter = EventViewModelParameter;
@@ -21,7 +19,6 @@ namespace EasyManager.ViewModel
 
         public void CreateEvent()
         {
-           
             Event CreatedEvent = new Event(
                 _eventViewModelParameter.Name, 
                 _eventViewModelParameter.Place,
@@ -30,6 +27,34 @@ namespace EasyManager.ViewModel
                 _eventViewModelParameter.Date
                 );
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public void SetEvent()
         {

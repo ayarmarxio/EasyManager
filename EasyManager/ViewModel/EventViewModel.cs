@@ -5,20 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.Devices.AllJoyn;
 using Windows.UI.Xaml;
 using EasyManager.Model;
 using EasyManager.Common;
 
 namespace EasyManager.ViewModel
 {
-    class EventViewModel
+    class EventViewModel: NotifyChanged
     {
         // -------------------Fields------------------- ---
 
         private EventCatalogSingleton _eventCatalogSingleton;
 
-        // public ICommand _createEventCommand;
-
+        
 
         // ------------------Properties--------------------
 
@@ -29,16 +29,11 @@ namespace EasyManager.ViewModel
         public ObservableCollection<Event> EventsCollection { get; set; }
 
         public EventHandler eventHandler { get; set; }
+
+        public Event AddedEvent { get; set; }
         
-        //public RelayCommand CreateEventCommand
-        //{
-        //    get
-        //    {
-        //        if (_createEventCommand == null)
-        //            _createEventCommand = new RelayCommand(eventHandler.CreateEvent);
-        //    }
-        //    set { _createEventCommand = value; }
-        //}
+        
+        
 
         public RelayCommand CreateEventCommand { get; set; }
 
@@ -61,6 +56,7 @@ namespace EasyManager.ViewModel
             EventsCollection = _eventCatalogSingleton.GetEventCatalogSingleton();
             eventHandler = new EventHandler(this);
             CreateEventCommand = new RelayCommand(eventHandler.CreateEvent);
+            _eventCatalogSingleton.DoAddEvent(AddedEvent);
         }   
     }
 }

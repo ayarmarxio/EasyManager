@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EasyManager.Model
 {
-    public class EventCatalogSingleton
+    class EventCatalogSingleton: NotifyChanged
     {
             private static EventCatalogSingleton instance;
 

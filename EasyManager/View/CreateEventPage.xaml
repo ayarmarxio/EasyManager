@@ -57,7 +57,7 @@
                     <TextBlock Text="Name: " Foreground="White" FontSize="30"></TextBlock>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-<TextBox Name="CreateNameTextBox" Width="500" Height="50" Text="{Binding Name}"></TextBox>
+                    <TextBox Name="CreateNameTextBox" Width="500" Height="50" Text="{Binding Name, Mode=TwoWay}"></TextBox>
         </StackPanel>
             </Grid>
     <Grid Grid.Row="1" >
@@ -69,7 +69,7 @@
 <TextBlock Text="Description: " Foreground="White" FontSize="30"></TextBlock>
         </StackPanel>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-                    <TextBox Width="500" Height="50" Text="{Binding Description}"></TextBox>
+                    <TextBox Width="500" Height="50" Text="{Binding Description, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </Grid>
     <Grid Grid.Row="2" >
@@ -81,7 +81,7 @@
                     <TextBlock Text="Place: " Foreground="White" FontSize="30"></TextBlock>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-                    <TextBox Width="500" Height="50" Text="{Binding Place}"></TextBox>
+                    <TextBox Width="500" Height="50" Text="{Binding Place, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </Grid>
     <Grid Grid.Row="3" >
@@ -93,7 +93,7 @@
                     <TextBlock Text="Time: " Foreground="White" FontSize="30"></TextBlock>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-                    <TextBox Width="500" Height="50" Text="{Binding Time}"></TextBox>
+                    <TextBox Width="500" Height="50" Text="{Binding Time, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </Grid>
     <Grid Grid.Row="4" >
@@ -105,13 +105,15 @@
                     <TextBlock Text="Date: " Foreground="White" FontSize="30"></TextBlock>
                 </StackPanel>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-                    <TextBox Width="500" Height="50" Text="{Binding Date}"></TextBox>
+                    <TextBox Width="500" Height="50" Text="{Binding Date, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="5" >
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button Height="80" Width="450" Content="Create Event"  Foreground="White" FontSize="30" 
                             Command="{Binding CreateEventCommand}" ></Button>
+                    <Button Height="80" Width="450" Content="Back" Foreground="White" Click="BackToEventPageButton"></Button>
+                 
                 </StackPanel>
                 
             </Grid>

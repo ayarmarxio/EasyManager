@@ -35,15 +35,15 @@
         
         
         <ListView x:Name="EventsListView" Grid.Column="1" Grid.Row="1"
-                  ItemsSource="{Binding EventsCollection}">
+                  ItemsSource="{Binding EventsCollection, Mode=TwoWay}">
             <ListView.DataContext>
                 <local:EventViewModel/>
             </ListView.DataContext>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock x:Name="blockName" Text="{Binding Name, Mode=TwoWay }" FontSize="40" Foreground="Black"></TextBlock>
-                        <TextBlock x:Name="blockPlace" Text="{Binding Place, Mode=TwoWay }" FontSize="40" Foreground="Black"></TextBlock>
+                        <TextBlock x:Name="blockName" Text="{Binding Name, Mode=TwoWay }" FontSize="40" Foreground="Black" Margin="20; 20, 20, 20"></TextBlock>
+                        <TextBlock x:Name="blockPlace" Text="{Binding Place, Mode=TwoWay }" FontSize="40" Foreground="Black" Margin="20; 20, 20, 20"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
