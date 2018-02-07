@@ -110,7 +110,8 @@
             </Grid>
             <Grid Grid.Row="5" >
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Height="80" Width="450" Content="Create Event"  Foreground="White" FontSize="30" Command="{Binding CreateEventCommand}" ></Button>
+                    <Button Height="80" Width="450" Content="Create Event"  Foreground="White" FontSize="30" 
+                            Command="{Binding CreateEventCommand}" ></Button>
                 </StackPanel>
                 
             </Grid>

@@ -4,13 +4,17 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using EasyManager.Model;
+using EasyManager.Common;
 
 namespace EasyManager.ViewModel
 {
-    class EventViewModel
+   public class EventViewModel: NotifyPropertyClass
     {
         private EventCatalogSingleton _eventCatalogSingleton;
+
+        // private EventHandler _eventHandler;
 
         // properties
 
@@ -18,15 +22,17 @@ namespace EasyManager.ViewModel
 
         public ObservableCollection<Event> EventsCollection { get; set; }
 
-        public EventHandler eventHandler { get; set; }
-            
+        private EventHandler _eventHandler;
+
         public RelayCommand CreateEventCommand { get; set; }
 
         public EventViewModel()
         {
             _eventCatalogSingleton = EventCatalogSingleton.Instance;
             EventsCollection = _eventCatalogSingleton.GetEventCatalogSingleton();
-            CreateEventCommand = new RelayCommand(eventHandler.CreateEvent());
+            _eventHandler = new EventHandler(this);
+         
+
         }   
 
     }
