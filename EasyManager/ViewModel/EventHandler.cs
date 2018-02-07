@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.VoiceCommands;
 using EasyManager.Model;
 
 namespace EasyManager.ViewModel
@@ -28,6 +29,11 @@ namespace EasyManager.ViewModel
                 _eventViewModelParameter.Time, 
                 _eventViewModelParameter.Date
                 );
+        }
+
+        public void SetEvent()
+        {
+             
         }
     }
 }

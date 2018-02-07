@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Windows.UI.Xaml;
 using EasyManager.Model;
 using EasyManager.Common;
@@ -15,20 +16,30 @@ namespace EasyManager.ViewModel
         // -------------------Fields------------------- ---
 
         private EventCatalogSingleton _eventCatalogSingleton;
-        private Event e;
-        
-        
-        
+
+        // public ICommand _createEventCommand;
+
+
         // ------------------Properties--------------------
 
-            
+
         // Instanciate a Event Catalog Singleton
         public EventCatalogSingleton EventCatalogSingleton { get; set; }
 
         public ObservableCollection<Event> EventsCollection { get; set; }
 
         public EventHandler eventHandler { get; set; }
-            
+        
+        //public RelayCommand CreateEventCommand
+        //{
+        //    get
+        //    {
+        //        if (_createEventCommand == null)
+        //            _createEventCommand = new RelayCommand(eventHandler.CreateEvent);
+        //    }
+        //    set { _createEventCommand = value; }
+        //}
+
         public RelayCommand CreateEventCommand { get; set; }
 
 
@@ -49,8 +60,7 @@ namespace EasyManager.ViewModel
             _eventCatalogSingleton = EventCatalogSingleton.Instance;
             EventsCollection = _eventCatalogSingleton.GetEventCatalogSingleton();
             eventHandler = new EventHandler(this);
-            CreateEventCommand = new RelayCommand(eventHandler.CreateEvent());
+            CreateEventCommand = new RelayCommand(eventHandler.CreateEvent);
         }   
-
     }
 }
