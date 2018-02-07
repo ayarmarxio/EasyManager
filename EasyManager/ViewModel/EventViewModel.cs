@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
+using System.Windows.Input;
 using EasyManager.Model;
 using EasyManager.Common;
 
@@ -19,7 +20,7 @@ namespace EasyManager.ViewModel
         
         
         
-        // ------------------Properties--------------------
+        // ------------------Properties-----------------------
 
             
         // Instanciate a Event Catalog Singleton
