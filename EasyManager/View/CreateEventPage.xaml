@@ -17,7 +17,7 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="75*"/>
-            <RowDefinition Height="858*"/>
+            <RowDefinition Height="500*"/>
             <RowDefinition Height="67*"/>
         </Grid.RowDefinitions>
 
@@ -45,7 +45,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" >
@@ -57,7 +57,7 @@
                     <TextBlock Text="Name: " Foreground="White" FontSize="30"></TextBlock>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-                    <TextBox Name="CreateNameTextBox" Width="500" Height="50" Text="{Binding Name, Mode=TwoWay}"></TextBox>
+                    <TextBox Name="CreateNameTextBox" Width="400" Height="50" Text="{Binding Name, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1" >
@@ -84,36 +84,20 @@
                     <TextBox Width="500" Height="50" Text="{Binding Place, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </Grid>
-            <Grid Grid.Row="3" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
-                    <TextBlock Text="Time: " Foreground="White" FontSize="30"></TextBlock>
-                </StackPanel>
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-                    <TextBox Width="500" Height="50" Text="{Binding Time, Mode=TwoWay}"></TextBox>
-                </StackPanel>
-            </Grid>
-            <Grid Grid.Row="4" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
-                    <TextBlock Text="Date: " Foreground="White" FontSize="30"></TextBlock>
-                </StackPanel>
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-                    <TextBox Width="500" Height="50" Text="{Binding Date, Mode=TwoWay}"></TextBox>
-                </StackPanel>
-            </Grid>
+            <DatePicker Grid.Row="3" HorizontalAlignment="Center"
+                        Date="{Binding Date, Mode=TwoWay}" ></DatePicker>
+            <TimePicker Grid.Row="4" HorizontalAlignment="Center"
+                        Time="{Binding Time.TimeOfDay, Mode=TwoWay}"></TimePicker>
+            
+            
             <Grid Grid.Row="5" >
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Height="80" Width="450" Content="Create Event"  Foreground="White" FontSize="30" 
-                            Command="{Binding CreateEventCommand}" ></Button>
-                    <Button Height="80" Width="450" Content="BackToEventPage" Foreground="White" FontSize="30" 
-                             Click="BackToEventPageButtonk"></Button>
+                    <Button Height="55" Width="450" Content="Create Event"  Foreground="White" FontSize="30" 
+                            Command="{Binding CreateEventCommand}" Margin="10, 10, 10, 10" ></Button>
+                    <Button Height="55" Width="450" Content="Delete Event"  Foreground="White" FontSize="30" 
+                            Command="{Binding DeleteCommand}" Margin="10, 10, 10, 10"></Button>
+                    <Button Height="55" Width="450" Content="BackToEventPage" Foreground="White" FontSize="30" 
+                             Click="BackToEventPageButtonk" Margin="10, 10, 10, 10"></Button>
 
                 </StackPanel>
 
