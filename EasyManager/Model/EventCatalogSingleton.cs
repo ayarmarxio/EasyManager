@@ -17,12 +17,13 @@ namespace EasyManager.Model
             {
                 eventCollection = new ObservableCollection<Event>()
                 {
-                    new Event("Salsa", "Rostorv", "Very very funny activity", new DateTime (2017, 01, 11), new DateTime (2017, 01, 14)),
-                    new Event("Fitness", "Copenhagen", "Not that funny activity", new DateTime (2017, 01, 11), new DateTime (2017, 01, 14)),
-                    new Event("Ballet", "Holbæk", "Very dangerous activity", new DateTime (2017, 01, 11), new DateTime (2017, 01, 14)),
-                    new Event("Hockey", "Lejre", "Lovely and passionate activity", new DateTime (2017, 01, 11), new DateTime (2017, 01, 14)),
+                    new Event("Salsa", "Rostorv", "Very very funny activity", new DateTimeOffset(), new DateTimeOffset()),
+                    new Event("Fitness", "Copenhagen", "Not that funny activity", new DateTimeOffset(), new DateTimeOffset()),
+                    new Event("Ballet", "Holbæk", "Very dangerous activity", new DateTimeOffset(), new DateTimeOffset()),
+                    new Event("Hockey", "Lejre", "Lovely and passionate activity", new DateTimeOffset(), new DateTimeOffset()),
                 };
             }
+        
 
             public static EventCatalogSingleton Instance
                 {
@@ -33,7 +34,10 @@ namespace EasyManager.Model
                             instance = new EventCatalogSingleton();
                         }
                         return instance;
+                       
                     }
+                    
+
             }
 
             // If you need to retrieve the Event Catalog Singleton as a Observable Collecion
@@ -48,6 +52,11 @@ namespace EasyManager.Model
             public void DoAddEvent(Event addedEvent)
             {
                  eventCollection.Add(addedEvent);
+            }
+
+            public void DoDeleteEvent(Event deletedEvent)
+            {
+                eventCollection.Remove(deletedEvent);
             }
     }
 }
