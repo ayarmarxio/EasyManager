@@ -15,7 +15,7 @@ namespace EasyManager.ViewModel
 {
     class EventViewModel:NotifyChanged
     {
-        // -------------------Fields----------------------
+        // -------------------Fields-------------------------
 
         private EventCatalogSingleton _eventCatalogSingleton = EventCatalogSingleton.Instance;
         private Event _selectedEvent;
