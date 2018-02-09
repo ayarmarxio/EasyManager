@@ -108,6 +108,9 @@
     <Compile Include="View\CreateEventPage.xaml.cs">
       <DependentUpon>CreateEventPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EventListViewPage.xaml.cs">
+      <DependentUpon>EventListViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EventPage.xaml.cs">
       <DependentUpon>EventPage.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,8 @@
     <None Include="EasyManager_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Design Images\EasyManager Tipografia.png" />
+    <Content Include="Assets\Design Images\LogoEM.png" />
     <Content Include="Assets\solid-color-wallpaper-21962-22515-hd-wallpapers.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -136,6 +141,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="View\CreateEventPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EventListViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
