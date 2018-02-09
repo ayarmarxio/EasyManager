@@ -5,10 +5,9 @@
     xmlns:local="using:EasyManager.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="2*"/>
@@ -17,24 +16,25 @@
             <local:EventViewModel/>
         </Grid.DataContext>
 
-        <ListView x:Name="EventsListView" HorizontalAlignment="Center"
+        <ListView x:Name="EventsListView" HorizontalAlignment="Center" Width="500"
                   ItemsSource="{Binding EventsCollection}" 
                   SelectedItem="{Binding SelectedEvent, Mode=TwoWay}">
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Height="100" Width="Auto">
-                        <Border Width="100" Height="100" Background="#e5f4ed">
+                    <RelativePanel Height="100" Width="500">
+                        <Border Name="Border" RelativePanel.AlignLeftWithPanel="True" Width="100" Height="100" Background="#e5f4ed">
                             <TextBlock x:Name="blockDate" Text="{Binding Date, Mode=TwoWay}" FontFamily="Gadugi" Foreground="Gray"></TextBlock>
                         </Border>
-                        <StackPanel>
-                            <TextBlock x:Name="blockTime" Text="{Binding Time, Mode=TwoWay}" FontFamily="Gadugi"></TextBlock>
+                        <TextBlock RelativePanel.RightOf="Border" x:Name="blockTime" Text="{Binding Time, Mode=TwoWay}" FontFamily="Gadugi"></TextBlock>
+                        <StackPanel RelativePanel.AlignRightWithPanel="True">
+                            
                             <StackPanel>
-                                <TextBlock x:Name="blockName" Text="{Binding Name, Mode=TwoWay }"  FontSize="30" Foreground="Black" FontFamily="Gadugi" HorizontalAlignment="Right"></TextBlock>
-                                <TextBlock x:Name="blockPlace" Text="{Binding Place, Mode=TwoWay }" FontSize="15" Foreground="Black" FontFamily="Gadugi" HorizontalAlignment="Right"></TextBlock>
+                                <TextBlock x:Name="blockName" Text="{Binding Name, Mode=TwoWay }"  FontSize="30" Foreground="Black" FontFamily="Gadugi" ></TextBlock>
+                                <TextBlock x:Name="blockPlace" Text="{Binding Place, Mode=TwoWay }" FontSize="15" Foreground="Black" FontFamily="Gadugi"></TextBlock>
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </RelativePanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

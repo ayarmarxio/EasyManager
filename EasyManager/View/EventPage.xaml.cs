@@ -28,13 +28,13 @@ namespace EasyManager
         {
             this.InitializeComponent();
         }
-        
+
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             EventPageFrame.Navigate(typeof(EventListViewPage));
         }
 
-       
-     
+
+
     }
 }

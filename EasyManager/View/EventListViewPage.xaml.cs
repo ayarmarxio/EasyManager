@@ -27,7 +27,6 @@ namespace EasyManager.View
             this.InitializeComponent();
         }
 
-
         private void To_Create_Event(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(CreateEventPage));

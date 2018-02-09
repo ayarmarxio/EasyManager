@@ -27,6 +27,7 @@ namespace EasyManager.View
             this.InitializeComponent();
         }
 
+        
         private void ToMainPage(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(EventListViewPage));
