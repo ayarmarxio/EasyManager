@@ -13,7 +13,7 @@ using EasyManager.Common;
 
 namespace EasyManager.ViewModel
 {
-    class EventViewModel:NotifyChanged
+    public class EventViewModel:NotifyPropertyChanged
     {
         // -------------------Fields-------------------------
 
@@ -50,7 +50,7 @@ namespace EasyManager.ViewModel
             }
         }
 
-        public EventHandler eventHandler { get; set; }
+        public EventHandlerClass eventHandler { get; set; }
         
         public RelayCommand CreateEventCommand { get; set; }
 
@@ -70,8 +70,8 @@ namespace EasyManager.ViewModel
         }
 
 
-        // Properties for Event
-
+        // ---------Properties for Event---------------------
+        
         public string Name { get; set;}
         public string Place { get; set;}
         public string Description { get; set;}
@@ -83,14 +83,11 @@ namespace EasyManager.ViewModel
 
         public EventViewModel()
         {
-           
             EventsCollection = _eventCatalogSingleton.GetEventCatalogSingleton();
             SelectedEvent = new Event();
-            eventHandler = new EventHandler(this);
+            eventHandler = new EventHandlerClass(this);
             CreateEventCommand = new RelayCommand(eventHandler.CreateEvent);
             DeleteEventCommand = new RelayCommand(eventHandler.DeleteEvent);
-            
-
         }   
 
     }

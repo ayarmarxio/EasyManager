@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyManager.ViewModel
 {
-    class DateTimeConverter
+    public class DateTimeConverter
     {
 
     }

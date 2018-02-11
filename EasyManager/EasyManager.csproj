@@ -97,9 +97,9 @@
     </Compile>
     <Compile Include="Common\NotifyPropertyChanged.cs" />
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Converter\DateTimeConverter.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\EventCatalogSingleton.cs" />
-    <Compile Include="Model\NotifyChanged.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\DateTimeConverter.cs" />
     <Compile Include="ViewModel\EventHandler.cs" />

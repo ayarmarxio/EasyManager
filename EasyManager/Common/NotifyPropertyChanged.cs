@@ -9,7 +9,7 @@ using EasyManager.Annotations;
 
 namespace EasyManager.Common
 {
-    class NotifyPropertyChanged: INotifyPropertyChanged
+    public class NotifyPropertyChanged: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

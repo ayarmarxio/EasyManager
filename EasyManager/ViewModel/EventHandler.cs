@@ -10,23 +10,34 @@ using Windows.Security.Cryptography.Core;
 using Windows.UI.Xaml;
 using EasyManager.Model;
 using Windows.UI.Popups;
+using EasyManager.Converter;
+
 
 namespace EasyManager.ViewModel
 {
-    class EventHandler
+    public class EventHandlerClass
     {
         private EventViewModel _eventViewModel;
 
-        public Event CreatedEvent { get; set; }
-   
+        private DateTimeConverter _dateTimeConverter = new DateTimeConverter();
         
-        public EventHandler(EventViewModel EventViewModel)
+
+        public Event CreatedEvent { get; set; }
+
+      
+        public EventHandlerClass(EventViewModel EventViewModel)
         {
             _eventViewModel = EventViewModel;
+            
         }
 
+        
         public void CreateEvent()
         {
+            DateTimeOffset GotTime = _eventViewModel.Date;
+            
+            
+                       
             Event createdEvent = new Event(
                 _eventViewModel.Name,
                 _eventViewModel.Place,
@@ -51,7 +62,6 @@ namespace EasyManager.ViewModel
             {
                 _eventViewModel.EventCatalogSingleton.DoDeleteEvent(_eventViewModel.SelectedEvent);
             }
-            
            
         }
     }
