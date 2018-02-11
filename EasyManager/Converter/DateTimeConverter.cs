@@ -10,17 +10,24 @@ namespace EasyManager.Converter
 {
     public class DateTimeConverter
     {
-        
+   
 
         public DateTimeConverter ()
         {
             
         }
 
-        public DateTimeOffset DateToDateTime()
+        public DateTimeOffset DateToDate( DateTimeOffset InsertedDate)
         {
-            return DateTime.Now;
-        } 
+            return InsertedDate.Date;
+        }
+
+        public DateTimeOffset DateToTime (DateTimeOffset InsertedTime)
+        {
+            InsertedTime = new DateTimeOffset();
+            return InsertedTime.ToUniversalTime();
+        }
+     
 
         
     }

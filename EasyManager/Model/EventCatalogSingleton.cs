@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EasyManager.Persistency;
 
 namespace EasyManager.Model
 {
@@ -13,6 +14,7 @@ namespace EasyManager.Model
 
             private ObservableCollection<Event> eventCollection;
 
+      
             private EventCatalogSingleton()
             {
                 eventCollection = new ObservableCollection<Event>()
@@ -36,7 +38,6 @@ namespace EasyManager.Model
                         return instance;
                        
                     }
-                    
 
             }
 
@@ -57,6 +58,18 @@ namespace EasyManager.Model
             public void DoDeleteEvent(Event deletedEvent)
             {
                 eventCollection.Remove(deletedEvent);
+            }
+
+            // Serialization Methods
+
+            public void SaveEvents(ObservableCollection<Event> savedAsJsonObservableCollection)
+            {
+                PersistencyService.SaveEventsAsJsonAsync(savedAsJsonObservableCollection);
+            }
+
+            public async void LoadEvents()
+            {
+                await PersistencyService.LoadEventsFromJasonAsync();
             }
     }
 }

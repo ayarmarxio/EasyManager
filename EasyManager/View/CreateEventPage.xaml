@@ -84,9 +84,9 @@
                     <TextBox Width="500" Height="50" Text="{Binding Place, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </Grid>
-            <DatePicker Grid.Row="3" HorizontalAlignment="Center"
+            <DatePicker x:Name="CreateEventPageDatePicker" Grid.Row="3" HorizontalAlignment="Center"
                         Date="{Binding Date, Mode=TwoWay}" ></DatePicker>
-            <TimePicker Grid.Row="4" HorizontalAlignment="Center"
+            <TimePicker x:Name="CreateEventPageTimePicker" Grid.Row="4" HorizontalAlignment="Center"
                         Time="{Binding Time.TimeOfDay, Mode=TwoWay}"></TimePicker>
             
             

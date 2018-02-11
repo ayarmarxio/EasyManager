@@ -19,34 +19,34 @@ namespace EasyManager.ViewModel
     {
         private EventViewModel _eventViewModel;
 
-        private DateTimeConverter _dateTimeConverter = new DateTimeConverter();
+        private DateTimeConverter _dateTimeConverter;
         
-
         public Event CreatedEvent { get; set; }
-
-      
+        
         public EventHandlerClass(EventViewModel EventViewModel)
         {
             _eventViewModel = EventViewModel;
-            
         }
 
         
         public void CreateEvent()
         {
-            DateTimeOffset GotTime = _eventViewModel.Date;
+            _dateTimeConverter = new DateTimeConverter();
             
+            DateTimeOffset changedDate = _dateTimeConverter.DateToDate(_eventViewModel.Date);
+            DateTimeOffset changedTime = _dateTimeConverter.DateToTime(_eventViewModel.Time);
+
             
-                       
             Event createdEvent = new Event(
                 _eventViewModel.Name,
                 _eventViewModel.Place,
                 _eventViewModel.Description,
-                _eventViewModel.Date,
-                _eventViewModel.Time                 
+                changedDate,
+                changedTime                
                 );
 
            _eventViewModel.EventCatalogSingleton.DoAddEvent(createdEvent);
+           _eventViewModel.EventCatalogSingleton.SaveEvents(_eventViewModel.EventsCollection);
 
         }
 
@@ -64,6 +64,8 @@ namespace EasyManager.ViewModel
             }
            
         }
+
+
     }
 }
 

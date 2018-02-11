@@ -11,6 +11,7 @@ using Windows.UI.Xaml;
 using EasyManager.Model;
 using EasyManager.Common;
 
+
 namespace EasyManager.ViewModel
 {
     public class EventViewModel:NotifyPropertyChanged
