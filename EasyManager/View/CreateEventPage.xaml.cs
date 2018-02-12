@@ -25,7 +25,7 @@ namespace EasyManager.View
         public CreateEventPage()
         {
             this.InitializeComponent();
-            CreateEventPageDatePicker.MinYear = new DateTimeOffset(DateTime.Now);
+            CreateEventPageDatePicker.MinYear = DateTime.Now;
         }
 
         
@@ -34,5 +34,7 @@ namespace EasyManager.View
             this.Frame.Navigate(typeof(EventListViewPage));
             
         }
+
+        
     }
 }

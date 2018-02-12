@@ -34,7 +34,7 @@ namespace EasyManager.ViewModel
             _dateTimeConverter = new DateTimeConverter();
             
             DateTimeOffset changedDate = _dateTimeConverter.DateToDate(_eventViewModel.Date);
-            DateTimeOffset changedTime = _dateTimeConverter.DateToTime(_eventViewModel.Time);
+            TimeSpan changedTime = _dateTimeConverter.DateToTime(_eventViewModel.Time);
 
             
             Event createdEvent = new Event(

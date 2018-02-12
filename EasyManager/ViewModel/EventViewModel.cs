@@ -23,7 +23,7 @@ namespace EasyManager.ViewModel
         private ObservableCollection<Event> _eventsCollection;
 
 
-        // ------------------Properties--------------------
+        // ------------------ Properties --------------------
       
 
         public EventCatalogSingleton EventCatalogSingleton {
@@ -41,8 +41,7 @@ namespace EasyManager.ViewModel
         public ObservableCollection<Event> EventsCollection {
             get
             {
-                return _eventsCollection; 
-                
+                return _eventsCollection;                 
             }
             set
             {
@@ -61,26 +60,24 @@ namespace EasyManager.ViewModel
             get
             {
                 return _selectedEvent;
-            }
+            } 
             set
             {
                 _selectedEvent = value;
                 OnPropertyChanged(nameof(SelectedEvent));
-                
             } 
         }
 
-
-        // ---------Properties for Event---------------------
+        // --------- Properties for Event ---------------------
         
         public string Name { get; set;}
         public string Place { get; set;}
         public string Description { get; set;}
-        public DateTimeOffset Date { get; set;}
-        public DateTimeOffset Time { get; set;}
+        public DateTimeOffset Date {get; set;}
+        public TimeSpan Time { get; set;}
 
 
-        // ------------------Constructor---------------------
+        // ------------------ Constructor ---------------------
 
         public EventViewModel()
         {
@@ -89,7 +86,6 @@ namespace EasyManager.ViewModel
             eventHandler = new EventHandlerClass(this);
             CreateEventCommand = new RelayCommand(eventHandler.CreateEvent);
             DeleteEventCommand = new RelayCommand(eventHandler.DeleteEvent);
-        }   
-
+        }  
     }
 }

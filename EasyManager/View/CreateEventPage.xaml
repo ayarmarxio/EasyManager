@@ -15,7 +15,7 @@
     <Grid>
        <Grid.ColumnDefinitions>
            <ColumnDefinition Width="1*"/>
-           <ColumnDefinition Width="1*"/>
+           <ColumnDefinition Width="2*"/>
            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
@@ -50,14 +50,15 @@
                             StrokeThickness="2" HorizontalAlignment="Center"/>
                     <DatePicker x:Name="CreateEventPageDatePicker" Grid.Row="3" HorizontalAlignment="Center"
                                 Date="{Binding Date, Mode=TwoWay}" Margin="0,30,0,25"/>
-                    <TimePicker Grid.Row="4" HorizontalAlignment="Center" Time="{Binding Time.TimeOfDay, Mode=TwoWay}"/>
+                    <TimePicker Grid.Row="4" HorizontalAlignment="Center" Time="{Binding Time, Mode=TwoWay}"/>
                 </StackPanel>
             </StackPanel>
-                <Button Name="CreateEventPageCreateButton" RelativePanel.Below="CreateEventStackPanel" Grid.Column="1" 
-                        Style="{StaticResource ButtonStyle1}" Content="create" FontSize="16" Margin="0,0,0,0" Width="400" Height="35" 
-                        VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="WhiteSmoke" Background="LightSeaGreen"/>
+                <Button Name="CreateEventPageCreateButton" Command="{Binding CreateEventCommand, Mode=TwoWay}"
+                        RelativePanel.Below="CreateEventStackPanel" 
+                        Grid.Column="1" Style="{StaticResource ButtonStyle1}" Content="create" 
+                        FontSize="16" Margin="0,0,0,0" Width="400" Height="35" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="WhiteSmoke" Background="LightSeaGreen"/>
                 <Button RelativePanel.Below="CreateEventPageCreateButton" Grid.Column="1" Content="back to list" FontSize="16" 
-                        Margin="0,0,0,0" Height="35" HorizontalAlignment="Center" Foreground="WhiteSmoke" Width="400" Background="LightSeaGreen" />  
+                        Click="ToMainPage" Margin="0,0,0,0" Height="35" HorizontalAlignment="Center" Foreground="WhiteSmoke" Width="400" Background="LightSeaGreen" />  
         </RelativePanel>
     </Grid>
 </Page>

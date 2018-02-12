@@ -10,7 +10,7 @@ namespace EasyManager.Converter
 {
     public class DateTimeConverter
     {
-   
+       
 
         public DateTimeConverter ()
         {
@@ -19,13 +19,14 @@ namespace EasyManager.Converter
 
         public DateTimeOffset DateToDate( DateTimeOffset InsertedDate)
         {
+
+       
             return InsertedDate.Date;
         }
 
-        public DateTimeOffset DateToTime (DateTimeOffset InsertedTime)
+        public TimeSpan DateToTime (TimeSpan InsertedTime)
         {
-            InsertedTime = new DateTimeOffset();
-            return InsertedTime.ToUniversalTime();
+            return InsertedTime;
         }
      
 

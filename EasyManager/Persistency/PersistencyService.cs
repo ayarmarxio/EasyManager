@@ -16,7 +16,6 @@ namespace EasyManager.Persistency
         private static string _eventFileName;
         private static string _eventsJsonString;
        
-
         public PersistencyService()
         {
             
