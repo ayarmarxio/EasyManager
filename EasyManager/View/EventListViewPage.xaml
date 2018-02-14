@@ -28,11 +28,12 @@
                                        FontSize="30" Foreground="Gray" Padding="10, 10, 10, 10"/>
                         </Border>
                         <TextBlock RelativePanel.RightOf="Border" x:Name="blockTime" Text="{Binding Time, Mode=TwoWay}" 
-                                   FontFamily="Gadugi" FontSize="18" Padding="10, 10, 10, 10"/>
+                                   FontFamily="Gadugi" FontSize="18" Padding="10, 5, 10, 10" Margin="10, 3, 10, 10" />
                         <StackPanel RelativePanel.AlignRightWithPanel="True">
-                            <StackPanel>
+                            <StackPanel Padding="10, 10, 5, 10" Width="200">
                                 <TextBlock x:Name="blockName" Text="{Binding Name, Mode=TwoWay }"  
-                                           FontSize="30" Foreground="Black" FontFamily="Gadugi"/>
+                                           FontSize="30" Foreground="Black" FontFamily="Gadugi"
+                                           HorizontalAlignment="Center"/>
                                 <TextBlock x:Name="blockPlace" Text="{Binding Place, Mode=TwoWay}" 
                                            FontSize="15" Foreground="Black" FontFamily="Gadugi"/>
                             </StackPanel>
