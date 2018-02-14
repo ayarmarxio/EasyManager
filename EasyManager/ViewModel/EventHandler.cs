@@ -27,7 +27,6 @@ namespace EasyManager.ViewModel
         {
             _eventViewModel = EventViewModel;
         }
-
         
         public void CreateEvent()
         {
@@ -46,7 +45,7 @@ namespace EasyManager.ViewModel
                 );
 
            _eventViewModel.EventCatalogSingleton.DoAddEvent(createdEvent);
-           _eventViewModel.EventCatalogSingleton.SaveEvents(_eventViewModel.EventsCollection);
+           _eventViewModel.EventCatalogSingleton.SaveEvents();
 
         }
 

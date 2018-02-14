@@ -8,6 +8,7 @@ using EasyManager.Persistency;
 
 namespace EasyManager.Model
 {
+    [Serializable]
     public class EventCatalogSingleton
     {
             private static EventCatalogSingleton instance;
@@ -62,14 +63,14 @@ namespace EasyManager.Model
 
             // Serialization Methods
 
-            public void SaveEvents(ObservableCollection<Event> savedAsJsonObservableCollection)
-            {
-                PersistencyService.SaveEventsAsJsonAsync(savedAsJsonObservableCollection);
-            }
+            public void SaveEvents()
+                {
+                    PersistencyService.SerializeObCo(eventCollection);
+                }
 
-            public async void LoadEvents()
-            {
-                await PersistencyService.LoadEventsFromJasonAsync();
-            }
+        //public async void LoadEvents()
+        //{
+        //    await PersistencyService.LoadEventsFromJasonAsync();
+        //}
     }
 }
