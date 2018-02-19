@@ -30,6 +30,14 @@ namespace EasyManager.Model
             Height = height;
         }
 
+        public Member()
+        {
+            
+        }
+
+        
+
+
         public int Id { get => _id; set => _id = value; }
         public string PhoneNumber { get => _phoneNumber; set => _phoneNumber = value; }
         public string Address { get => _address; set => _address = value; }

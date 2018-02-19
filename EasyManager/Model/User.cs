@@ -25,5 +25,10 @@ namespace EasyManager.Model
             _userPassword = userPassword;
         }
 
+        public User()
+        {
+            
+        }
+
     }
 }

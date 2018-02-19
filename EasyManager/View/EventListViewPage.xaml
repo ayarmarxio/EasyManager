@@ -16,9 +16,9 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         
-        <!--<Grid.DataContext>
+        <Grid.DataContext>
             <local:EventViewModel/>
-        </Grid.DataContext>-->
+        </Grid.DataContext>
         
         
                 

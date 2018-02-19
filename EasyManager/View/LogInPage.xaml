@@ -19,9 +19,9 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <!--<Grid.DataContext>
+        <Grid.DataContext>
             <local:LoginViewModel/>
-        </Grid.DataContext>-->
+        </Grid.DataContext>
         
         <Pivot Grid.Column="1">
             <PivotItem Name="PivotItemLogIn" Header="Log In">
