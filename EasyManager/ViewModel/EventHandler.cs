@@ -38,7 +38,7 @@ namespace EasyManager.ViewModel
 
             
             Event createdEvent = new Event(
-                _eventViewModel.Name,
+                _eventViewModel.EventName,
                 _eventViewModel.Place,
                 _eventViewModel.Description,
                 changedDate,
@@ -46,8 +46,6 @@ namespace EasyManager.ViewModel
                 );
 
            _eventViewModel.EventCatalogSingleton.DoAddEvent(createdEvent);
-           _eventViewModel.EventCatalogSingleton.SaveEvents(_eventViewModel.EventsCollection);
-
         }
 
         public async void DeleteEvent() 

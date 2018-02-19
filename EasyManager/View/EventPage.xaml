@@ -19,9 +19,9 @@
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
         
-        <Grid.DataContext>
+        <!--<Grid.DataContext>
             <local:EventViewModel/>
-        </Grid.DataContext>
+        </Grid.DataContext>-->
 
         <Border>
             <Border.Background>

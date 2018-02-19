@@ -6,43 +6,53 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    
+    
+  
 
-    <Grid >
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Grid.DataContext>
+        
+        <!--<Grid.DataContext>
             <local:EventViewModel/>
-        </Grid.DataContext>
+        </Grid.DataContext>-->
+        
+        
+                
+                <ListView x:Name="EventsListView" HorizontalAlignment="Center" Width="500"
+                      ItemsSource="{Binding EventsCollection}" 
+                      SelectedItem="{Binding SelectedEvent, Mode=TwoWay}">
 
-        <ListView x:Name="EventsListView" HorizontalAlignment="Center" Width="500"
-                  ItemsSource="{Binding EventsCollection}" 
-                  SelectedItem="{Binding SelectedEvent, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <RelativePanel Height="100" Width="500">
+                                <Border Name="DateSquare" RelativePanel.AlignLeftWithPanel="True" Width="100" Height="100" Background="#e5f4ed">
+                                    <TextBlock x:Name="blockDate" Text="{Binding Date, Mode=TwoWay}" FontFamily="Gadugi" 
+                                           FontSize="30" Foreground="Gray" Padding="10, 10, 10, 10"/>
+                                </Border>
+                                <StackPanel RelativePanel.RightOf="DateSquare">
+                                    <TextBlock  x:Name="blockTime" Text="{Binding Time, Mode=TwoWay}" 
+                                           FontFamily="Gadugi" FontSize="18" Padding="10, 5, 10, 10" Margin="10, 3, 10, 10" />
+                                    <TextBlock x:Name="blockPlace" Text="{Binding Place, Mode=TwoWay}" 
+                                       FontSize="15" Foreground="Black" FontFamily="Gadugi"/>
+                                </StackPanel>
+                                <StackPanel RelativePanel.AlignRightWithPanel="True">
 
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <RelativePanel Height="100" Width="500">
-                        <Border Name="Border" RelativePanel.AlignLeftWithPanel="True" Width="100" Height="100" Background="#e5f4ed">
-                            <TextBlock x:Name="blockDate" Text="{Binding Date, Mode=TwoWay}" FontFamily="Gadugi" 
-                                       FontSize="30" Foreground="Gray" Padding="10, 10, 10, 10"/>
-                        </Border>
-                        <TextBlock RelativePanel.RightOf="Border" x:Name="blockTime" Text="{Binding Time, Mode=TwoWay}" 
-                                   FontFamily="Gadugi" FontSize="18" Padding="10, 5, 10, 10" Margin="10, 3, 10, 10" />
-                        <StackPanel RelativePanel.AlignRightWithPanel="True">
-                            <StackPanel Padding="10, 10, 5, 10" Width="200">
-                                <TextBlock x:Name="blockName" Text="{Binding Name, Mode=TwoWay }"  
-                                           FontSize="30" Foreground="Black" FontFamily="Gadugi"
-                                           HorizontalAlignment="Center"/>
-                                <TextBlock x:Name="blockPlace" Text="{Binding Place, Mode=TwoWay}" 
-                                           FontSize="15" Foreground="Black" FontFamily="Gadugi"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </RelativePanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                    <StackPanel Padding="10, 10, 5, 10" Width="200">
+                                        <TextBlock x:Name="blockName" Text="{Binding EventName, Mode=TwoWay }"  
+                                               FontSize="30" Foreground="Black" FontFamily="Gadugi"
+                                               HorizontalAlignment="Center"/>
 
+                                    </StackPanel>
+                                </StackPanel>
+                            </RelativePanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+        
         <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button Name="CreateEventButton" Height="40" Width="120" Margin="20, 20, 20,20" 
                     Content="Create" Foreground="White" Background="#29ba8c"

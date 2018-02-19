@@ -33,7 +33,7 @@
                     </LinearGradientBrush>
                 </StackPanel.Background>
                 <StackPanel>
-                    <TextBox Name="CreateNameTextBox" Text="{Binding Name, Mode=TwoWay}" 
+                    <TextBox Name="CreateNameTextBox" Text="{Binding EventName, Mode=TwoWay}" 
                              PlaceholderText="name" PlaceholderForeground="White" Foreground="Transparent" VerticalAlignment="Center"
                               FontSize="18" Margin="0,60,0,0" Width="300" HorizontalAlignment="Center" BorderBrush="#00000000" 
                              Background="Transparent"/>

@@ -60,14 +60,6 @@ namespace EasyManager.Model
 
             // Serialization Methods
 
-            public void SaveEvents(ObservableCollection<Event> savedAsJsonObservableCollection)
-            {
-                PersistencyService.SaveEventsAsJsonAsync(savedAsJsonObservableCollection);
-            }
-
-            public async void LoadEvents()
-            {
-                await PersistencyService.LoadEventsFromJasonAsync();
-            }
+            
     }
 }
