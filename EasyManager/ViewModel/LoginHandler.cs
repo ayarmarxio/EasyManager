@@ -14,13 +14,11 @@ namespace EasyManager.ViewModel
     {
 
         private LoginViewModel _loginViewModel;
-        private Member _memberLoginHandler;
-        private readonly FrameNavigateClass _frame;
-        MemberSingleton _memberSingleton = MemberSingleton.GetInstance();
+        private Member _memberLoginHandler= new Member();
+        private readonly FrameNavigateClass _frame = new FrameNavigateClass();
+        //MemberSingleton _memberSingleton = MemberSingleton.GetInstance();
 
        
-
-
 
         public LoginHandler(LoginViewModel loginViewModel)
         {
@@ -35,15 +33,13 @@ namespace EasyManager.ViewModel
             { 
                 foreach (var memberOfCollection in _loginViewModel.MemberCollection)
                 {
-                    if (_loginViewModel.CurrentUserName == "admin" && _loginViewModel.CurrentUserPassword == "haltandcatchfire")
+                    if ((_loginViewModel.CurrentUserName == "admin") && (_loginViewModel.CurrentUserPassword == "haltandcatchfire"))
                     {
-                     
-                        _frame.ActivateFrameNavigation(typeof(MainPage), memberOfCollection );
+                        _frame.ActivateFrameNavigation(typeof(MainPage), memberOfCollection);
                     }
-                    else if (_loginViewModel.CurrentUserName == _memberLoginHandler.UserName &&
-                             _loginViewModel.CurrentUserPassword == _memberLoginHandler.UserPassword)
+                    else if ((_loginViewModel.CurrentUserName == _memberLoginHandler.UserName) &&
+                             (_loginViewModel.CurrentUserPassword == _memberLoginHandler.UserPassword))
                     {
-                      
                         _frame.ActivateFrameNavigation(typeof(MemberMenuPage), memberOfCollection);
                     }
                     else
